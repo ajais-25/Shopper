@@ -15,10 +15,12 @@ const Shop = () => {
 
   return (
     <>
-      <div className="products-container">
-        {products.map((product) => (
-          <ShopCard key={product.id} product={product} />
-        ))}
+      <div className="shop-products">
+        <div className="products-container">
+          {products.map((product) => (
+            <ShopCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </>
   );

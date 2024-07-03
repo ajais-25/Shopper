@@ -1,6 +1,7 @@
 import React from "react";
 import { addItem } from "../../features/cart/cartItemSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ShopCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -11,10 +12,16 @@ const ShopCard = ({ product }) => {
 
   return (
     <div className="product-card">
-      <div className="product-img">
+      <Link to={`details/${product.id}`} className="product-img">
         <img src={product.image} alt="product" />
-      </div>
-      <div className="product-title">{product.title}</div>
+      </Link>
+      <Link
+        to={`details/${product.id}`}
+        style={{ textDecoration: "none", color: "inherit" }}
+        className="product-title"
+      >
+        {product.title}
+      </Link>
       <div className="product-bottom">
         <div className="product-price">${product.price}</div>
         <button onClick={addToCartHandler} className="add-to-cart">

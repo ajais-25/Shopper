@@ -26,28 +26,30 @@ const Cart = () => {
 
   return (
     <>
-      <div className="cart-container">
-        <div className="cart-product-container">
-          {items.map((item) => (
-            <CartCard key={item.id} item={item} />
-          ))}
-        </div>
+      <div className="cart">
+        <div className="cart-container">
+          <div className="cart-product-container">
+            {items.map((item) => (
+              <CartCard key={item.id} item={item} />
+            ))}
+          </div>
 
-        <div className="final-amount-container">
-          <div className="details-heading">Details</div>
-          <div className="total-price">
-            <div>Total Price:</div>
-            <div>${price}</div>
+          <div className="final-amount-container">
+            <div className="details-heading">Details</div>
+            <div className="total-price">
+              <div>Total Price:</div>
+              <div>${price}</div>
+            </div>
+            <div className="tax-incl">
+              <div>Tax:</div>
+              <div>${tax}</div>
+            </div>
+            <div className="final-price">
+              <div>Final Price:</div>
+              <div>${finalPrice}</div>
+            </div>
+            <button className="checkout-btn">Checkout</button>
           </div>
-          <div className="tax-incl">
-            <div>Tax:</div>
-            <div>${tax}</div>
-          </div>
-          <div className="final-price">
-            <div>Final Price:</div>
-            <div>${finalPrice}</div>
-          </div>
-          <button className="checkout-btn">Checkout</button>
         </div>
       </div>
     </>

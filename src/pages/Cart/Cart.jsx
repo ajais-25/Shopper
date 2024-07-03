@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Cart.css";
 import { useSelector } from "react-redux";
 import CartCard from "../../components/CartCard/CartCard";
 
 const Cart = () => {
   const items = useSelector((state) => state.items);
+
+  const [price, setPrice] = useState(0);
+  const [tax, setTax] = useState(0);
+  const [finalPrice, setFinalPrice] = useState(0);
+
+  const calculatePrice = () => {
+    let total = 0;
+    items.map((item) => {
+      total += item.price * 100 * item.quantity;
+    });
+    setPrice((total / 100).toFixed(2));
+    setTax(((total * 0.01) / 100).toFixed(2));
+    setFinalPrice(((total * 1.01) / 100).toFixed(2));
+  };
+
+  useEffect(() => {
+    calculatePrice();
+  }, [items]);
 
   return (
     <>
@@ -19,15 +37,15 @@ const Cart = () => {
           <div className="details-heading">Details</div>
           <div className="total-price">
             <div>Total Price:</div>
-            <div>$100</div>
+            <div>${price}</div>
           </div>
           <div className="tax-incl">
             <div>Tax:</div>
-            <div>$2</div>
+            <div>${tax}</div>
           </div>
           <div className="final-price">
             <div>Final Price:</div>
-            <div>$102</div>
+            <div>${finalPrice}</div>
           </div>
           <button className="checkout-btn">Checkout</button>
         </div>

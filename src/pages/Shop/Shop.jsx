@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Card from "../../components/Card/Card";
-import Navbar from "../../components/Navbar/Navbar";
+import ShopCard from "../../components/ShopCard/ShopCard.jsx";
+import { url } from "../../utils/constants.js";
 import "./Shop.css";
-
-const url = "https://fakestoreapi.com/products";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -17,10 +15,9 @@ const Shop = () => {
 
   return (
     <>
-      <Navbar />
       <div className="products-container">
         {products.map((product) => (
-          <Card key={product.id} product={product} />
+          <ShopCard key={product.id} product={product} />
         ))}
       </div>
     </>

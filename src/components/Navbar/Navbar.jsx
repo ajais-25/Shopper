@@ -1,18 +1,19 @@
 import Logo from "../../images/logo.png";
 import Cart from "../../images/cart.png";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <div className="logo-container">
+        <Link to="/" className="logo-container">
           <img src={Logo} alt="logo" />
-        </div>
-        <div className="cart-logo-container">
+        </Link>
+        <Link to="/cart" className="cart-logo-container">
           <img src={Cart} alt="cart" className="cart-logo" />
           <div className="cart-quantity">4</div>
-        </div>
+        </Link>
       </div>
     </>
   );

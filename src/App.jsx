@@ -1,10 +1,9 @@
 import "./App.css";
-import Shop from "./pages/Shop/Shop";
 
 function App() {
   return (
     <>
-      <Shop />
+      <h1>React</h1>
     </>
   );
 }

@@ -69,10 +69,18 @@
 .details-add-to-cart-btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #ED9455;
+    background-color: #FF7D29;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
+.details-add-to-cart-btn:hover {
+    background-color: #ff7f29b1;
+}
+
+.details-add-to-cart-btn:active {
+    background-color: #ff7f2984;
+}

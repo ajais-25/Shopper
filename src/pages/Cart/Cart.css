@@ -175,7 +175,7 @@
 }
 
 .checkout-btn {
-    background-color: #ED9455;
+    background-color: #FF7D29;
     border: none;
     border-radius: 5px;
     color: white;
@@ -183,4 +183,13 @@
     font-size: 1.3rem;
     width: 100%;
     padding: 2%;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #ff7f29b1;
+}
+
+.checkout-btn:active {
+    background-color: #ff7f2984;
 }

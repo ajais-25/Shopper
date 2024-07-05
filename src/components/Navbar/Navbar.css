@@ -33,13 +33,14 @@
     justify-content: center;
     align-items: center;
     height: 50%;
-    width: 5%;
+    width: 6vmin;
     position: relative;
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    /* padding: 2px; */
 }
 
 .cart-logo {
-    height: 95%;
+    height: 100%;
     width: 100%;
     object-fit: contain;
     /* cursor: pointer; */
@@ -55,4 +56,24 @@
     padding: 0 5px;
     font-style: "Roboto", "sans-serif";
     font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        width: 30%;
+    }
+
+    .cart-logo-container {
+        width: 8vmin;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo-container {
+        width: 40%;
+    }
+
+    .cart-logo-container {
+        width: 10vmin;
+    }
 }

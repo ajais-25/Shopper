@@ -54,13 +54,25 @@ body {
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product-card img:hover {
+    transform: scale(1.1);
 }
 
 .product-title {
     font-size: 1.5rem;
     font-weight: 500;
     padding: 20px;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.3s;
 }
+
+.product-title:hover {
+    background-color: #5c5b5b45;
+} 
 
 .product-bottom {
     display: flex;

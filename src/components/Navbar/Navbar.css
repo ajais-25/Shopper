@@ -35,13 +35,14 @@
     height: 50%;
     width: 5%;
     position: relative;
-    /* background-color: lightcoral; */
+    background-color: lightblue;
 }
 
 .cart-logo {
     height: 95%;
     width: 100%;
     object-fit: contain;
+    /* cursor: pointer; */
 }
 
 .cart-quantity {

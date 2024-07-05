@@ -111,13 +111,22 @@
 }
 
 .add-remove-btn button {
-    background-color: #ED9455;
+    background-color: #FF7D29;
     border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
     font-size: 1.5rem;
     width: 30%;
+    transition: background-color 0.3s;
+}
+
+.add-remove-btn button:hover {
+    background-color: #ff7f29b1;
+}
+
+.add-remove-btn button:active {
+    background-color: #ff7f2984;
 }
 
 /* Amount Container */

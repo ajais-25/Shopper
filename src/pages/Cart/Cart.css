@@ -53,7 +53,7 @@
     justify-content: space-between;
     align-items: center;
     /* margin: 1%; */
-    height: 250px;
+    min-height: 250px;
     width: 100%;
     /* padding: 1%; */
     background-color: whitesmoke;
@@ -65,12 +65,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
     align-items: center;
     height: 100%;
     width: calc(100% - 250px);
     /* background-color: lightblue; */
     margin: 1%;
-    padding: 2%;
+    padding: 4%;
 }
 
 .cart-product-title {
@@ -201,4 +202,122 @@
 
 .checkout-btn:active {
     background-color: #ff7f2984;
+}
+
+@media screen and (max-width: 1100px) {
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-product-container {
+        width: 100%;
+    }
+
+    .cart-product-card {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cart-product-right {
+        width: 100%;
+    }
+
+    .final-amount-container {
+        padding: 4%;
+        width: 60%;
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cart-product-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cart-product-card {
+        min-height: 200px;
+    }
+
+    .cart-product-title {
+        font-size: 1.2rem;
+    }
+
+    .cart-product-price {
+        font-size: 1rem;
+    }
+
+    .cart-product-quantity {
+        font-size: 1rem;
+    }
+
+    .add-remove-btn button {
+        font-size: 1.2rem;
+    }
+
+    .final-amount-container {
+        width: 80%;
+    }
+
+    .details-heading {
+        font-size: 1.2rem;
+    }
+
+    .total-price,
+    .tax-incl,
+    .final-price {
+        font-size: 1.2rem;
+    }
+
+    .checkout-btn {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cart-product-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cart-product-card {
+        min-height: 200px;
+    }
+
+    .cart-product-title {
+        font-size: 1.2rem;
+    }
+
+    .cart-product-price {
+        font-size: 1rem;
+    }
+
+    .cart-product-quantity {
+        font-size: 1rem;
+    }
+
+    .add-remove-btn button {
+        font-size: 1.2rem;
+    }
+
+    .final-amount-container {
+        padding: 6%;
+        width: 100%;
+    }
+
+    .details-heading {
+        font-size: 1.2rem;
+    }
+
+    .total-price,
+    .tax-incl,
+    .final-price {
+        font-size: 1rem;
+    }
+
+    .checkout-btn {
+        font-size: 1.1rem;
+    }
 }

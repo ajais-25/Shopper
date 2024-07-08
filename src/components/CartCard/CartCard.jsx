@@ -1,6 +1,7 @@
 import React from "react";
 import { addItem, removeItem } from "../../features/cart/cartItemSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CartCard = ({ item }) => {
   const dispatch = useDispatch();
@@ -16,11 +17,17 @@ const CartCard = ({ item }) => {
   return (
     <>
       <div className="cart-product-card">
-        <div className="cart-product-img">
+        <Link to={`../details/${item.id}`} className="cart-product-img">
           <img src={item.image} alt="product" />
-        </div>
+        </Link>
         <div className="cart-product-right">
-          <div className="cart-product-title">{item.title}</div>
+          <Link
+            to={`../details/${item.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+            className="cart-product-title"
+          >
+            {item.title}
+          </Link>
           <div className="cart-product-bottom">
             <div className="cart-product-price">${item.price}</div>
             <div className="add-remove-btn">

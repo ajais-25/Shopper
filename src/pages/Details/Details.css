@@ -134,7 +134,7 @@
     .details-add-to-cart-btn {
         text-align: center;
         width: 100%;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
 
@@ -149,6 +149,6 @@
 
     .details-price,
     .details-add-to-cart-btn {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { useParams } from "react-router-dom";
-import { url } from "../../utils/constants";
+import { url } from "../..//constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../features/cart/cartItemSlice";
 

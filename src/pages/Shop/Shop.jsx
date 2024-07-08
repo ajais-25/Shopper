@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ShopCard from "../../components/ShopCard/ShopCard.jsx";
-import { url } from "../../utils/constants.js";
+import { url } from "../../constants.js";
 import "./Shop.css";
 
 const Shop = () => {

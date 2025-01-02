@@ -13,6 +13,7 @@ const Cart = () => {
   const [price, setPrice] = useState(0);
   const [tax, setTax] = useState(0);
   const [finalPrice, setFinalPrice] = useState(0);
+  const [disableCheckout, setDisableCheckout] = useState(true);
 
   const calculatePrice = () => {
     let total = 0;
@@ -27,6 +28,11 @@ const Cart = () => {
 
   useEffect(() => {
     calculatePrice();
+    if (items.length > 0) {
+      setDisableCheckout(false);
+    } else {
+      setDisableCheckout(true);
+    }
   }, [items]);
 
   const uid = () => {
@@ -71,9 +77,13 @@ const Cart = () => {
               <div>Final Price:</div>
               <div>${finalPrice}</div>
             </div>
-            <button className="checkout-btn" onClick={handleCheckout}>
-              Checkout
-            </button>
+            {disableCheckout ? (
+              <button className="checkout-btn-disabled">Checkout</button>
+            ) : (
+              <button className="checkout-btn" onClick={handleCheckout}>
+                Checkout
+              </button>
+            )}
           </div>
         </div>
       </div>

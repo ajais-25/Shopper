@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Cart.css";
 import { useSelector } from "react-redux";
 import CartCard from "../../components/CartCard/CartCard";
+import { createOrder } from "../../features/orderSlice";
+import { emptyCart } from "../../features/cartItemSlice";
+import { useDispatch } from "react-redux";
 
 const Cart = () => {
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
 
   const [price, setPrice] = useState(0);
   const [tax, setTax] = useState(0);
@@ -12,9 +16,10 @@ const Cart = () => {
 
   const calculatePrice = () => {
     let total = 0;
-    items.map((item) => {
-      total += item.price * 100 * item.quantity;
-    });
+    items &&
+      items.map((item) => {
+        total += item.price * 100 * item.quantity;
+      });
     setPrice((total / 100).toFixed(2));
     setTax(((total * 0.01) / 100).toFixed(2));
     setFinalPrice(((total * 1.01) / 100).toFixed(2));
@@ -24,14 +29,32 @@ const Cart = () => {
     calculatePrice();
   }, [items]);
 
+  const uid = () => {
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
+  };
+
+  const handleCheckout = () => {
+    const date = new Date();
+    const arrivalDate = new Date(date.setDate(date.getDate() + 7));
+
+    const order = {
+      orderId: uid(),
+      items,
+      arrivalDate: arrivalDate.toDateString(),
+      total: finalPrice,
+      status: "Order Placed",
+    };
+    dispatch(createOrder(order));
+    dispatch(emptyCart());
+  };
+
   return (
     <>
       <div className="cart">
         <div className="cart-container">
           <div className="cart-product-container">
-            {items.map((item) => (
-              <CartCard key={item.id} item={item} />
-            ))}
+            {items &&
+              items.map((item) => <CartCard key={item.id} item={item} />)}
           </div>
 
           <div className="final-amount-container">
@@ -48,7 +71,9 @@ const Cart = () => {
               <div>Final Price:</div>
               <div>${finalPrice}</div>
             </div>
-            <button className="checkout-btn">Checkout</button>
+            <button className="checkout-btn" onClick={handleCheckout}>
+              Checkout
+            </button>
           </div>
         </div>
       </div>

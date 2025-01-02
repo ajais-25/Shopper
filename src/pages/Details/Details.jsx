@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { useParams } from "react-router-dom";
-import { url } from "../..//constants";
+import { url } from "../../constants";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../features/cart/cartItemSlice";
+import { addItem } from "../../features/cartItemSlice";
 
 const Details = () => {
   const { productId } = useParams();

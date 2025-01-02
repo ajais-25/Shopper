@@ -28,7 +28,13 @@
     object-fit: contain;
 }
 
-.cart-logo-container {
+.navbar-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.cart-logo-container,
+.orders-logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +45,8 @@
     /* padding: 2px; */
 }
 
-.cart-logo {
+.cart-logo,
+.orders-logo {
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -65,7 +72,8 @@
         width: 30%;
     }
 
-    .cart-logo-container {
+    .cart-logo-container,
+    .orders-logo-container {
         width: 8vmin;
     }
 }
@@ -75,7 +83,8 @@
         width: 40%;
     }
 
-    .cart-logo-container {
+    .cart-logo-container,
+    .orders-logo-container {
         width: 10vmin;
     }
 }

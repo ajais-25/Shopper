@@ -14,38 +14,43 @@ const Orders = () => {
 
   return (
     <div className="orders-container">
-      <h2>My Orders</h2>
-      {orders.length === 0 ? (
-        <p
-          style={{
-            marginTop: "30px",
-            textAlign: "center",
-          }}
-        >
-          No orders found.
-        </p>
-      ) : (
-        <div className="orders-list">
-          {orders.map((order, index) => (
-            <div key={index} className="order-card">
-              <h3>Order #{order.orderId}</h3>
-              <p>
-                <strong>Status:</strong> {order.status}
-              </p>
-              <p>
-                <strong>Expected Date:</strong>
-                {order.arrivalDate}
-              </p>
-              <p>
-                <strong>Total:</strong> ${order.total}
-              </p>
-              <button className="view-order" onClick={handleClick}>
-                View Order
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="orders-content">
+        <h2>My Orders</h2>
+        {orders.length === 0 ? (
+          <p
+            style={{
+              marginTop: "30px",
+              textAlign: "center",
+              color: "#666",
+              fontSize: "1.1rem",
+              fontWeight: "400",
+            }}
+          >
+            No orders found.
+          </p>
+        ) : (
+          <div className="orders-list">
+            {orders.map((order, index) => (
+              <div key={index} className="order-card">
+                <h3>Order #{order.orderId}</h3>
+                <p>
+                  <strong>Status:</strong> {order.status}
+                </p>
+                <p>
+                  <strong>Expected Date:</strong>
+                  {order.arrivalDate}
+                </p>
+                <p>
+                  <strong>Total:</strong> ${order.total}
+                </p>
+                <button className="view-order" onClick={handleClick}>
+                  View Order
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

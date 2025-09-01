@@ -15,6 +15,7 @@ import { store } from "./app/store.js";
 import Details from "./pages/Details/Details.jsx";
 import Orders from "./pages/Orders/Orders.jsx";
 import OrderDetails from "./pages/OrderDetails/OrderDetails.jsx";
+import NotFound from "./pages/NotFound/NotFound.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,7 +25,7 @@ const router = createBrowserRouter(
       <Route path="orders" element={<Orders />} />
       <Route path="orders/:orderId" element={<OrderDetails />} />
       <Route path="details/:productId" element={<Details />} />
-      <Route path="*" element={<h1>Not found</h1>} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );

@@ -1,6 +1,6 @@
 # Shopper
 
-This is an e-commerce website built using React and Redux for managing the cart, and an external API for fetching products.
+This is an e-commerce website built using React and Redux for managing the cart and orders, and an external API for fetching products.
 
 ## Features
 
@@ -8,6 +8,7 @@ This is an e-commerce website built using React and Redux for managing the cart,
 - Add products to the cart
 - Remove products from the cart
 - View the cart with a list of selected products and total price
+- Place and view your orders
 - Responsive design for mobile and desktop
 
 ## Technologies Used
@@ -54,6 +55,7 @@ This project fetches product data from an external API. You'll need to configure
 - **Product Details**: Click on a product to view more details.
 - **Add to Cart**: Click on the "Add to Cart" button to add a product to the cart.
 - **Cart**: View the list of products in the cart and the total price. Remove products from the cart if needed.
+- **Orders**: Show all orders and view a specific order.
 
 ## Contributing
 

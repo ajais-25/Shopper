@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const OrderDetailsCard = ({ item }) => {
   return (
-    <div className="cart-product-card">
+    <div className="cart-product-card order-item-card">
       <Link to={`../details/${item.id}`} className="cart-product-img">
-        <img src={item.image} alt="product" />
+        <img src={item.image} alt={item.title} />
       </Link>
       <div className="cart-product-right">
         <Link
@@ -17,11 +17,9 @@ const OrderDetailsCard = ({ item }) => {
         </Link>
         <div className="cart-product-bottom">
           <div className="cart-product-price">${item.price}</div>
-          <div className="add-remove-btn">
-            <div className="cart-product-quantity">
-              <span style={{ fontSize: "0.9rem" }}>X</span>
-              {item.quantity}
-            </div>
+          <div className="order-item-quantity">
+            <span className="quantity-label">Quantity:</span>
+            <span className="cart-product-quantity">{item.quantity}</span>
           </div>
         </div>
       </div>

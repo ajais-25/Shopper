@@ -49,12 +49,14 @@ const Shop = () => {
 
   if (loading) {
     return (
-      <div className="shop-products">
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-          <h2 className="loading-text">
-            Discovering amazing products for you...
-          </h2>
+      <div className="shop-container">
+        <div className="shop-products">
+          <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <h2 className="loading-text">
+              Discovering amazing products for you...
+            </h2>
+          </div>
         </div>
       </div>
     );
@@ -62,23 +64,25 @@ const Shop = () => {
 
   if (error) {
     return (
-      <div className="shop-products">
-        <div className="error-container">
-          <h2>Oops! Something went wrong</h2>
-          <p>{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="retry-btn"
-          >
-            Try Again
-          </button>
+      <div className="shop-container">
+        <div className="shop-products">
+          <div className="error-container">
+            <h2>Oops! Something went wrong</h2>
+            <p>{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="retry-btn"
+            >
+              Try Again
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <>
+    <div className="shop-container">
       <div className="shop-products">
         <div className="shop-header">
           <h1 className="shop-title">Discover Our Collection</h1>
@@ -185,7 +189,7 @@ const Shop = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
